@@ -74,7 +74,7 @@ test("Login to Swag Labs with empty username and password", async ({
   await getObjectById(page, passwordInputId).fill(password);
   await getObjectById(page, loginButtonId).click();
 
-  expect(page.url()).toBe(urlExpected);
+  expect(await page.url()).toBe(urlExpected);
   page.close();
 });
 
@@ -87,8 +87,7 @@ test("add-to-cart-sauce-labs-backpack", async ({ page }) => {
   await getObjectById(page, passwordInputId).fill(password);
   await getObjectById(page, loginButtonId).click();
   await getObjectById(page, "add-to-cart-sauce-labs-backpack").click();
-
-  expect(page.url()).toBe(urlExpected);
+  expect(await page.url()).toBe(urlExpected);
   page.close();
 });
 
@@ -251,6 +250,54 @@ test("logout_sidebar_link", async ({ page }) => {
   await getObjectById(page, loginButtonId).click();
   await getObjectById(page, "react-burger-menu-btn").click();
   await getObjectById(page, "logout_sidebar_link").click();
+  expect(page.url()).toBe(urlExpected);
+  page.close();
+});
+test("add-to-cart-sauce-labs-bike-light", async ({ page }) => {
+  const userName = "standard_user";
+  const password = "secret_sauce";
+  const urlExpected = "https://www.saucedemo.com/inventory.html";
+  await page.goto(config.SwagLabsUrl);
+  await getObjectById(page, userNameInputId).fill(userName);
+  await getObjectById(page, passwordInputId).fill(password);
+  await getObjectById(page, loginButtonId).click();
+  await getObjectById(page, "add-to-cart-sauce-labs-bike-light").click();
+  expect(page.url()).toBe(urlExpected);
+  page.close();
+});
+test("add-to-cart-sauce-labs-bolt-t-shirt", async ({ page }) => {
+  const userName = "standard_user";
+  const password = "secret_sauce";
+  const urlExpected = "https://www.saucedemo.com/inventory.html";
+  await page.goto(config.SwagLabsUrl);
+  await getObjectById(page, userNameInputId).fill(userName);
+  await getObjectById(page, passwordInputId).fill(password);
+  await getObjectById(page, loginButtonId).click();
+  await getObjectById(page, "add-to-cart-sauce-labs-bolt-t-shirt").click();
+  expect(page.url()).toBe(urlExpected);
+  page.close();
+});
+test("add-to-cart-sauce-labs-fleece-jacket", async ({ page }) => {
+  const userName = "standard_user";
+  const password = "secret_sauce";
+  const urlExpected = "https://www.saucedemo.com/inventory.html";
+  await page.goto(config.SwagLabsUrl);
+  await getObjectById(page, userNameInputId).fill(userName);
+  await getObjectById(page, passwordInputId).fill(password);
+  await getObjectById(page, loginButtonId).click();
+  await getObjectById(page, "add-to-cart-sauce-labs-fleece-jacket").click();
+  expect(page.url()).toBe(urlExpected);
+  page.close();
+});
+test("add-to-cart-sauce-labs-onesie", async ({ page }) => {
+  const userName = "standard_user";
+  const password = "secret_sauce";
+  const urlExpected = "https://www.saucedemo.com/inventory.html";
+  await page.goto(config.SwagLabsUrl);
+  await getObjectById(page, userNameInputId).fill(userName);
+  await getObjectById(page, passwordInputId).fill(password);
+  await getObjectById(page, loginButtonId).click();
+  await getObjectById(page, "add-to-cart-sauce-labs-onesie").click();
   expect(page.url()).toBe(urlExpected);
   page.close();
 });
